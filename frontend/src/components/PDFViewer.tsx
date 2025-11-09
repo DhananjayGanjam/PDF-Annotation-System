@@ -38,8 +38,8 @@ interface PDFViewerProps {
   onBack: () => void;
   canAnnotate: boolean;
 }
-const originalUrl: string = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
-const API_BASE: string = originalUrl.replace('/api', '');
+const API_BASE: string = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const BACKEND_URL: string = API_BASE.replace('/api', '');
 const allUsers = ['A1', 'D1', 'D2', 'R1'];
 
 const PDFViewer: React.FC<PDFViewerProps> = ({ document, currentUser, onBack, canAnnotate }) => {
@@ -181,7 +181,7 @@ const PDFViewer: React.FC<PDFViewerProps> = ({ document, currentUser, onBack, ca
                 }}
               >
                 <iframe
-                  src={`${API_BASE}/${document.filepath}#toolbar=0`}
+                  src={`${BACKEND_URL}/${document.filepath}#toolbar=0`}
                   style={{ width: '100%', height: '100%', pointerEvents: canAnnotate && showForm ? 'none' : 'auto' }}
                   title="PDF Viewer"
                 />
