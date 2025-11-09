@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dropdown, Button, Space, Tag } from 'antd';
+import { Dropdown, Button, Space } from 'antd';
 import { UserOutlined, DownOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 
@@ -27,7 +27,7 @@ const USERS: UserRoles = {
   R1: { name: 'Read-only (R1)', role: 'readonly', permissions: ['view'] }
 };
 
-const UserSwitcher: React.FC<UserSwitcherProps> = ({ currentUser, onUserChange }) => {
+const UserSwitcher: React.FC<UserSwitcherProps> = ({onUserChange }) => {
   const handleUserSelect = (userId: string): void => {
     onUserChange(userId);
   };

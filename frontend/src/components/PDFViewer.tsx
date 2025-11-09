@@ -52,7 +52,7 @@ const PDFViewer: React.FC<PDFViewerProps> = ({ document, currentUser, onBack, ca
   const [visibilityMode, setVisibilityMode] = useState<'everyone' | 'specific'>('everyone');
   const [selectedUsers, setSelectedUsers] = useState<string[]>(['A1', 'D1', 'D2', 'R1']);
   const [clickPosition, setClickPosition] = useState<{ x: number; y: number } | null>(null);
-  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [currentPage] = useState<number>(1);
   const [selectedAnnotation, setSelectedAnnotation] = useState<string | null>(null);
 
   useEffect(() => {
