@@ -181,7 +181,7 @@ const PDFViewer: React.FC<PDFViewerProps> = ({ document, currentUser, onBack, ca
                 }}
               >
                 <iframe
-                  src={`http://localhost:5000/${document.filepath}#toolbar=0`}
+                  src={`${API_BASE}/${document.filepath}#toolbar=0`}
                   style={{ width: '100%', height: '100%', pointerEvents: canAnnotate && showForm ? 'none' : 'auto' }}
                   title="PDF Viewer"
                 />
