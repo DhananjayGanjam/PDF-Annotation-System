@@ -27,7 +27,7 @@ interface DocumentListProps {
 }
 
 
-const API_BASE: string = 'http://localhost:5000/api';
+const API_BASE: string = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 const DocumentList: React.FC<DocumentListProps> = ({ currentUser, userInfo, onViewDocument }) => {
   const [documents, setDocuments] = useState<Document[]>([]);

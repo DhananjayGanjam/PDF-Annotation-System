@@ -17,7 +17,7 @@ interface UploadedFile {
 }
 
 // Constants
-const API_BASE: string = 'http://localhost:5000/api';
+const API_BASE: string = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 const UploadPanel: React.FC<UploadPanelProps> = ({ currentUser }) => {
   const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
